@@ -1,0 +1,170 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Store Sales Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Store Sales Prediction</legend>
+        </h1>
+        
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Unique Product ID</label>
+            <input class="form-control" type="text" name="Item_Identifier"
+                placeholder="Enter the Product ID" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Item Weight</label>
+            <input class="form-control" type="float" name="Item_Weight"
+                placeholder="Enter Item Weight" />
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Item Fat Content</label>
+            <select class="form-control" name="Item_Fat_Content" placeholder="Enter the Item Fat Content" required>
+                <option class="placeholder" selected disabled value="">Select the Item Fat Content</option>
+                <option value="Low Fat">
+                    Low fat
+                </option>
+                <option value="Regular">
+                    Regular
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Item Visibility</label>
+            <input class="form-control" type="float" name="Item_Visibility"
+                placeholder="Enter Item Visibility" min='0' max='1'/>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Item Item_Type</label>
+            <select class="form-control" name="Item_Type" placeholder="Enter the Item_Type" required>
+                <option class="placeholder" selected disabled value="">Select the Item_Type</option>
+                <option value="Dairy">
+                    Dairy
+                </option>
+                <option value="Soft Drinks">
+                    Soft Drinks
+                </option>
+                <option value="Meat">
+                    Meat
+                </option>
+                <option value="Fruits and Vegetables">
+                    Fruits and Vegetables
+                </option>
+                <option value="Household">
+                    Household
+                </option>
+                <option value="Baking Goods">
+                    Baking Goods
+                </option>
+                <option value="Snack Foods">
+                    Snack Foods
+                </option>
+                <option value="Frozen Foods">
+                    Frozen Foods
+                </option>
+                <option value="Breakfast">
+                    Breakfast
+                </option>
+                <option value="Health and Hygiene">
+                    Health and Hygiene
+                </option>
+                <option value="Hard Drinks">
+                    Hard Drinks
+                </option>
+                <option value="Starchy Foods">
+                    Starchy Foods
+                </option>
+                <option value="Others">
+                    Others
+                </option>
+                <option value="Seafood">
+                    Seafood
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Item MRP</label>
+            <input class="form-control" type="float" name="Item_MRP"
+                placeholder="Enter Item MRP" />
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Enter the Outlet Identifier</label>
+            <input class="form-control" type="int" name="Outlet_Identifier"
+                placeholder="Enter the Outlet Identifier" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter the Outlet Establishment Year</label>
+            <input class="form-control" type="int" name="Outlet_Establishment_Year"
+                placeholder="Enter the Outlet Establishment Year" />
+        </div>
+  
+        <div class="mb-3">
+            <label class="form-label">Outlet Size</label>
+            <select class="form-control" name="Outlet_Size" placeholder="Enter your Outlet_Size" required>
+                <option class="placeholder" selected disabled value="">Select Outlet Size</option>
+                <option value="High">
+                    High
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="Small">
+                    Small
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Outlet Location Type</label>
+            <select class="form-control" name="Outlet_Location_Type" placeholder="Enter Outlet Location Type" required>
+                <option class="placeholder" selected disabled value="">Select Outlet Location Type</option>
+                <option value="Tier 1">
+                    Tier 1
+                </option>
+                <option value="Tier 2">
+                    Tier 2
+                </option>
+                <option value="Tier 3">
+                    Tier 3
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Outlet Type</label>
+            <select class="form-control" name="Outlet_Type" placeholder="Enter Outlet Type" required>
+                <option class="placeholder" selected disabled value="">Select Outlet Type</option>
+                <option value="Supermarket Type1">
+                    Supermarket Type1
+                </option>
+                <option value="Supermarket Type2">
+                    Supermarket Type2
+                </option>
+                <option value="Supermarket Type3">
+                    Supermarket Type3
+                </option>
+                <option value="Grocery Store">
+                    Grocery Store
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Store Sales" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
